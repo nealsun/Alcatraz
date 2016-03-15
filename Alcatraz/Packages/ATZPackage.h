@@ -39,7 +39,6 @@ typedef NS_ENUM(NSUInteger, ATZPackageWebsiteType) {
 @property (strong, nonatomic) NSString *remotePath;
 @property (strong, nonatomic) NSString *revision;
 @property (strong, nonatomic) NSString *screenshotPath;
-@property (strong, nonatomic) NSString *iconName;
 @property (nonatomic, readonly) NSString *website;
 @property (nonatomic, readonly) NSString *extension;
 @property (nonatomic, readonly) BOOL isInstalled;
@@ -48,10 +47,10 @@ typedef NS_ENUM(NSUInteger, ATZPackageWebsiteType) {
 
 - (id)initWithDictionary:(NSDictionary *)dict;
 
-- (void)installWithProgress:(void(^)(NSString *proggressMessage, CGFloat progress))progress
+- (void)installWithProgress:(void(^)(NSString *progressMessage, CGFloat progress))progress
                  completion:(void(^)(NSError *failure))completion;
 
-- (void)updateWithProgress:(void(^)(NSString *proggressMessage, CGFloat progress))progress
+- (void)updateWithProgress:(void(^)(NSString *progressMessage, CGFloat progress))progress
                 completion:(void(^)(NSError *failure))completion;
 
 - (void)removeWithCompletion:(void(^)(NSError *failure))completion;
